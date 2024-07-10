@@ -1,0 +1,56 @@
+<form class="c-form" 
+      {% if cliente %}
+          action="{{ url_for("cliente.atualizar_cliente", cliente_id=cliente.id) }}" 
+      {% else %}
+          action="{{ url_for("cliente.inserir_cliente") }}" 
+      {% endif %}
+
+      method="POST"
+
+      {% if cliente %}
+          c-swap="#cliente-{{cliente.id}}"
+      {% else %}
+          c-append="#lista-clientes"
+      {% endif %}
+
+      c-reload-container="true" onsubmit="return validarFormulario()">
+   
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 mb-3">
+                <label class="form-label">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Gabriel do Santos" {% if cliente %}value="{{cliente.nome}}"{% endif %} required>
+            </div>
+          
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="gabriel@gmail.com" {% if cliente %}value="{{cliente.email}}"{% endif %} required>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Data de Nascimento:</label>
+                <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" {% if cliente %}value="{{cliente.data_nascimento}}"{% endif %} required>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <label class="form-label">CPF:</label>
+                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.0000-00"{% if cliente %}value="{{cliente.cpf}}"{% endif %} required pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}">
+                <div class="invalid-feedback">CPF inválido</div>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Telefone:</label>
+                <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="99 99999-9999"{% if cliente %}value="{{cliente.telefone}}"{% endif %} required>
+            </div>
+            
+            <div class="col-md-8 text-center">
+                <button type="submit"  class="btn btn-primary mt-2" onclick="window.location.reload() "style="width: 150px;">
+                    {% if cliente %}Salvar{% else %}Salvar{% endif %}
+                </button>
+            </div>
+        </div>
+    </div>           
+</form>
+
+<!-- Adicione o script ao final do corpo para garantir que o DOM esteja carregado -->
+<script src="/static/js/scripts.js"></script>
