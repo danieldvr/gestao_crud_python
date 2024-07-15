@@ -19,12 +19,12 @@
         <div class="row justify-content-center">
             <div class="col-md-8 mb-3">
                 <label class="form-label">Nome:</label>
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Gabriel do Santos" {% if cliente %}value="{{cliente.nome}}"{% endif %} required>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="ex: Gabriel do Santos" {% if cliente %}value="{{cliente.nome}}"{% endif %} required>
             </div>
           
             <div class="col-md-4 mb-3">
                 <label class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="gabriel@gmail.com" {% if cliente %}value="{{cliente.email}}"{% endif %} required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="ex: gabriel@gmail.com" {% if cliente %}value="{{cliente.email}}"{% endif %} required>
             </div>
             
             <div class="col-md-4 mb-3">
@@ -34,17 +34,17 @@
             
             <div class="col-md-4 mb-3">
                 <label class="form-label">CPF:</label>
-                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.0000-00"{% if cliente %}value="{{cliente.cpf}}"{% endif %} required pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}">
+                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="ex: 000.000.000-00"{% if cliente %}value="{{cliente.cpf}}"{% endif %} required pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}">
                 <div class="invalid-feedback">CPF inválido</div>
             </div>
             
             <div class="col-md-4 mb-3">
                 <label class="form-label">Telefone:</label>
-                <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="99 99999-9999"{% if cliente %}value="{{cliente.telefone}}"{% endif %} required>
+                <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="ex: 99 99999-9999"{% if cliente %}value="{{cliente.telefone}}"{% endif %} required>
             </div>
             
             <div class="col-md-8 text-center">
-                <button type="submit"  class="btn btn-primary mt-2" onclick="window.location.reload() "style="width: 150px;">
+                <button type="submit"  class="btn btn-primary mt-2" style="width: 150px;">
                     {% if cliente %}Salvar{% else %}Salvar{% endif %}
                 </button>
             </div>
@@ -52,5 +52,4 @@
     </div>           
 </form>
 
-<!-- Adicione o script ao final do corpo para garantir que o DOM esteja carregado -->
-<script src="/static/js/scripts.js"></script>
+        
