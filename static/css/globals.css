@@ -6,8 +6,8 @@
 }
 
 body {
-    background: #d6e1e5;
-    font-family: Arial, sans-serif; /* Definir uma fonte padrão para todo o site */
+    background-color: #d6e1e5;
+    font-family: 'Roboto', sans-serif; /* Definir uma fonte padrão para todo o site */
 }
 
 /* Navbar */
@@ -50,3 +50,15 @@ body {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.table thead th {
+    white-space: nowrap;
+}
+.table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main{
+    background-color: #d6e1e5;
+}
